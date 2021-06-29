@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Cash</title>
+    <link rel="stylesheet" href="withdraw.css">
+    <!--icons materialize-matrial icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 at>Please Enter Amount</h1>
+
+        <div class="calculator">
+            <input type="text" name="screen" id="screen">
+            <table>
+            
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>      
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                </tr>
+                <tr>
+                    <td><button>C</button></td>
+                    <td><button>0</button></td>
+                    <td><button onclick="togglePopup()"><span style="font-size: 40px;" class="material-icons">
+                        done
+                        </span></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
+            <h2>Hello,</h2><br>
+            <h3 style="font-size: 20px;">0123 4567 8910 2345</h3><br>
+            <p style="font-size: 25px;">Amount Debited Successfully!!</p><br>
+            <p style="font-size: 20px;">Your Current Account Balance Is: <span id="balance"></span></p><br>
+            <span class="exit" onClick="parent.location='index.html'" style="color: #f0f; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700;">Exit</span>
+        </div>
+    </div>
+    
+</body>
+<script src="withdraw.js"></script>
+</html>
