@@ -1,4 +1,6 @@
-var amount=50000;
+amtlocal = localStorage.setItem("amount", "50000");
+var x = localStorage.getItem("amount");
+// console.log(x)
 let screen = document.getElementById('screen');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
@@ -8,28 +10,33 @@ for (item of buttons) {
         if (buttonText == 'C') {
             screenValue = "";
             screen.value = screenValue;
-        }
-        else if (buttonText == 'done') {
-            if(screen.value>amount){
+        } else if (buttonText == 'done') {
+            if (screen.value > x) {
                 alert("The entered amount is more than your account balance.");
                 screenValue = "";
                 screen.value = screenValue;
-            }
-            else{
-                amount = amount - screen.value;
-                //console.log(amount);
-                document.getElementById("balance").innerHTML = amount;
+            } else {
+                x = x - screen.value;
+                console.log(x);
+                document.getElementById("balance").innerHTML = x;
+                reduced = localStorage.setItem("amount", x);
                 screenValue = "";
                 screen.value = screenValue;
+                // const myJSON = JSON.stringify(obj);
+                // document.getElementById("demo").innerHTML = myJSON;
+                // const jsonData = JSON.stringify(amt);
             }
-        }
-        else {
+        } else {
             screenValue += buttonText;
             screen.value = screenValue;
-        }     
+        }
     })
 }
-document.getElementById("balance").innerHTML = amount;
-function togglePopup(){
+document.getElementById("amount").innerHTML = x;
+balance = localStorage.getItem("reduced");
+console.log(balance);
+// document.getElementById("amount").innerHTML = balance;
+// document.getElementById("balance").innerHTML = amt.amount;
+function togglePopup() {
     document.getElementById("popup-1").classList.toggle("active");
 }
